@@ -1,0 +1,51 @@
+<!--
+  Generated template for the MessagesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Messages</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content 
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+      <ion-card  *ngFor="let item of items" (click)="Viewperson(item)" >
+            
+              <ion-card-header >
+                    {{item.message}} 
+              </ion-card-header>
+            
+              <!-- <ion-card-content>
+                
+              </ion-card-content> -->
+            
+            </ion-card>
+            
+        <!-- <ion-list>
+                <ion-item-divider color="light">รายการล่าสุด</ion-item-divider>
+                <ion-item *ngFor="let item of items" (click)="Viewperson(item)">
+                    
+                         {{item.message}} 
+           
+                </ion-item>
+                  
+        </ion-list>  -->
+
+</ion-content>

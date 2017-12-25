@@ -1,0 +1,26 @@
+page-pages {
+    .no-padding {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    a:link {
+        text-decoration: none;
+    }
+    
+    a:visited {
+        text-decoration: none;
+    }
+    
+    a:hover {
+        text-decoration: underline;
+    }
+    
+    a:active {
+        text-decoration: underline;
+    }
+    .masters {
+        background-color: #1565C0;
+        color: green;
+      }
+        
+}

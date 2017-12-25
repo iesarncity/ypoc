@@ -1,0 +1,30 @@
+page-alert {
+    .margin-top {
+        margin-top: 2px;
+    }
+    .margin-bottom {
+        margin-bottom: 2px;
+    }
+    .movie-info {
+        margin-top: 0.5em;
+        margin-bottom: 0em;
+        border-top: 0.05em solid rgb(167, 167, 167);
+
+    }
+    .masters {
+        background-color: #eeeeee;
+      }
+
+      
+.image-wrapper {
+    position: relative;
+    padding-bottom: 56.2%;
+  }
+  
+  .image-wrapper img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -1,1 +1,81 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+  <ion-header>
+    <ion-toolbar color="purple2">
+      <ion-title>
+            <!-- <ion-avatar>
+                    <img src="http://www.clearcredentials.com/static/images/userlogin.png" style="display:block;width:auto;height:5em;margin-top:1em;margin-left:auto;margin-right:auto;">
+                  </ion-avatar> -->
+                  <p text-center>เมนู</p>
+
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <!-- <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button> -->
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.homePage)">
+          <ion-icon name="ios-home"></ion-icon>
+          หน้าแรก
+      </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.messagesPage)">
+            <ion-icon name="ios-alert-outline"></ion-icon>
+            Messages Alert
+            <ion-badge id="notifications-badge" color="danger">1</ion-badge>
+        </button>
+
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.alertPage)">
+          <ion-icon name="alert"></ion-icon>
+          ข่าวเตือนภัย
+      </button>
+      <!-- <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.catalogPage)">
+          <ion-icon name="apps"></ion-icon>
+          หมวดหมู่ข่าว
+      </button> -->
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.listPage)">
+          <ion-icon name="list"></ion-icon>
+          รายการข่าวทั้งหมด
+      </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.reportMonthPage)">
+          <ion-icon name="calendar"></ion-icon>
+          ยอดการรายงานข่าวประจำเดือน
+      </button>
+  
+    <a ion-item href="http://www.organicyasothon.com">
+        <ion-icon name="leaf"></ion-icon>
+        รู้จักเกษตรอินทรีย์ยโสธร
+      </a>
+
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.pagesPage)">
+        <ion-icon name="document"></ion-icon>
+        หนังสือราชการ
+    </button>
+    <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.weatherPage)">
+            <ion-icon name="rainy"></ion-icon>
+         ตรวจสอบสภาพอากาศ
+        </button>
+    <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.radioPage)">
+        <ion-icon name="videocam"></ion-icon>
+        TV & Radio
+    </button>
+    <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.addPage)">
+        <ion-icon name="send"></ion-icon>
+        แจ้งปัญหาการใช้งาน
+    </button>
+    <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.loginPage)">
+        <ion-icon ios="ios-log-in" md="md-log-in"></ion-icon>
+        เฉพาะเจ้าหน้าที่
+    </button>
+      <button menuClose ion-item icon-left (click)="nav.setRoot(pages2.aboutPage)">
+          <ion-icon name="at"></ion-icon>
+          ติดต่อเรา
+      </button>
+    </ion-list>
+  </ion-content>
+  
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

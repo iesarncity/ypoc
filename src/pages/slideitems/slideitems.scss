@@ -1,0 +1,32 @@
+page-slideitems {
+    .masters {
+        background-color: #eeeeee;
+      }
+    .movie-card {
+        background: #f9faf7;
+        // border: 1px solid color($colors, secondary);
+    }
+    .text {
+
+    }
+    .movie-info {
+        margin-top: 0.2em;
+        border-top: 0.05em solid rgb(167, 167, 167);
+
+    }
+
+    .image-wrapper {
+        background-color: #000;
+        width: 100%;
+        padding-bottom: 56.25%;
+        position: relative;
+    }
+    .image-wrapper img {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+    }
+
+}

@@ -1,17 +1,90 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="purple2">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+
+    <ion-title>ศูนย์ปฏิบัติการจังหวัดยโสธร</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only>
+            <img src="http://www.yasothon.go.th/webservice/img/yasothon.png" style="display:block;width:30px;height:auto;margin-left:auto;margin-right:auto;"  />
+        </button>
+      </ion-buttons>
   </ion-navbar>
+
+  <!-- <ion-toolbar color="purple1">
+      <ion-grid >
+          <ion-row class="vertical-align-content" >
+            <ion-col col-4><button ion-button block style="display: inline-block !important; font-size: 14px; line-height: 10px; padding: 5px;" color="light" clear (click)="Home()">
+              หน้าหลัก
+              
+            </button></ion-col>
+            <ion-col col-4><button ion-button  block tyle="display: inline-block !important; font-size: 14px; line-height: 10px; padding: 5px;" color="light" clear (click)="Alert(item)">
+              ข้อมูลเตือนภัย!
+            </button></ion-col>
+            <ion-col col-4>
+              <button ion-button block style="display: inline-block !important; font-size: 14px; line-height: 10px; padding: 5px;" color="light" clear (click)="About(item)">
+                ติดต่อเรา</button></ion-col>
+          </ion-row>
+      </ion-grid>
+    </ion-toolbar> -->
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content >
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content 
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+      <ion-list class="margin-bottom" >
+      <ion-slides pager="true"  autoplay="3000" loop="true" effect="fade" speed="1500" *ngIf="slideData.length > 1">
+          <ion-slide *ngFor="let slide of slideData"
+           style="
+          position: relative;
+          padding-bottom: 75%;
+          background-color: rgb(125, 149, 255)" >
+            <img src="{{slide.image}}" 
+            style="display:block; 
+            position: absolute;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;"
+             (click)="Viewslide(slide)" />
+            <!-- <div class='description'>
+                <p class='description_content'>{{ slide.Header }}</p>
+              </div> -->
+          </ion-slide>
+          <!-- Left and right controls -->
+          
+        </ion-slides>
+        <!-- <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div> -->
+      </ion-list>
+
+  <ion-list class="no-padding">
+      <ion-item-divider color="purple3" id="cameraTabDefaultPage-list-item-divider1">
+          ข่าวล่าสุด (Last News)
+        </ion-item-divider>
+      <ion-item detail-push *ngFor="let item of items" (click)="Viewperson(item)">
+        <ion-thumbnail item-start>
+            <img *ngIf="!(item.Pics)" src= "http://www.yasothonpoc.com/webservice/images/no_image.jpg" />
+            <img *ngIf="item.Pics" [src]= "'http://www.yasothonpoc.com/upload/thumb/' + item.Pics " />
+        </ion-thumbnail>
+        <div text-wrap class="cut-text-multi"><h3>{{item.Header}}</h3></div>
+        <p><ion-icon name="time"></ion-icon>  {{ item.datetime }}</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="page < totalPage">
+      <ion-infinite-scroll-content 
+      loadingSpinner="bubbles" 
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    
+
 </ion-content>

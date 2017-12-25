@@ -1,0 +1,86 @@
+<!--
+  Generated template for the AddTechnologyPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+<ion-navbar color="purple2">
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>แจ้งปัญหาการใช้งาน ?</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+    
+       <div>
+          <ion-item *ngIf="isEdited && !hideForm">
+             <button
+                ion-button
+                item-right
+                color="secondary"
+                text-center
+                block
+                (click)="deleteEntry()">Remove this Entry?</button>
+          </ion-item>
+    
+    
+          <div *ngIf="hideForm">
+             <ion-item class="post-entry-message" text-wrap>
+                <h2>บันทึกข้อมูลเรียบร้อยแล้ว!</h2>
+                <p>ขอขอบพระคุณท่านที่แจ้งปัญหาการใช้งาน?</p>
+                <br>
+                <button ion-button round outline (click)="Viewhome()">กลับหน้าหลัก</button>
+             </ion-item>
+          </div>
+    
+    
+          <div *ngIf="!hideForm">
+             <form [formGroup]="form" (ngSubmit)="saveEntry()">
+    
+                <ion-list>
+                   <ion-item-group>
+                      <ion-item-divider >แจ้งปัญหา *</ion-item-divider>
+                      <ion-item>
+                         <ion-input
+                            type="text"
+                            placeholder="ชื่อเรื่อง..."
+                            formControlName="name"
+                            [(ngModel)]="technologyName"></ion-input>
+                      </ion-item>
+                   </ion-item-group>
+    
+    
+                   <ion-item-group>
+                      <ion-item-divider color="light">รายละเอียด *</ion-item-divider>
+                      <ion-item>
+                         <ion-textarea
+                            placeholder="รายละเอียด..."
+                            formControlName="description"
+                            rows="6"
+                            [(ngModel)]="technologyDescription"></ion-textarea>
+                      </ion-item>
+                   </ion-item-group>
+    
+    
+                   <ion-item>
+                      <button
+                         ion-button large icon-start
+                         color="primary"
+                         text-center
+                         block
+                         [disabled]="!form.valid"><ion-icon name="send"></ion-icon> แจ้งปัญหา</button>
+                   </ion-item>
+    
+                </ion-list>
+    
+             </form>
+          </div>
+       </div>
+    
+    
+    </ion-content>

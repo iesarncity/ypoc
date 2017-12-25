@@ -1,0 +1,122 @@
+<!--
+  Generated template for the RadioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="purple2">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+
+    <ion-title>TV Online</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="grid-basic-page">
+    <ion-list>
+        <video x-webkit-airplay="allow" alt="Calvary Worship Center" width="100%" height="auto" 
+          src="http://edge160.bugaboo.tv/liveedgech7_partner/_definst_/smil:auto.smil/playlist.m3u8" autoplay controls type="application/x-mpegURL">
+        </video>
+    </ion-list>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-card (click)="startVideo5()">
+              <ion-card-header>
+                <img src="http://thaiptv.com/img/Ch7hd_150.jpg" height="100px" width="auto"/>
+              </ion-card-header>
+              <ion-card-content>
+                <p text-center>CH7</p>
+              </ion-card-content>
+            </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="startVideo6()">
+            <ion-card-header>
+              <img src="http://thaiptv.com/img/3hd.png" height="100px" width="auto"/>
+            </ion-card-header>
+            <ion-card-content>
+              <p text-center>ช่อง 3 HD</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-card (click)="startVideo7()">
+            <ion-card-header>
+              <img src="http://thaiptv.com/img/pptv-hd.jpg" height="100px" width="auto"/>
+            </ion-card-header>
+            <ion-card-content>
+              <p text-center>PPTV HD</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+        <ion-col>
+          <ion-card (click)="startVideo8()">
+            <ion-card-header>
+              <img src="http://thaiptv.com/img/nbt.jpg" height="100px" width="auto"/>
+            </ion-card-header>
+            <ion-card-content>
+              <p text-center>NBT TV</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  
+    
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <!-- dopa tv -->
+        <button ion-button icon-start round outline full (click)="startVideo()" color="danger">
+          <ion-icon name="play"></ion-icon>
+          Dopa Channel
+        </button>
+      </ion-col>
+      <ion-col>
+          <!-- ThaiPBS -->
+        <button ion-button icon-start round outline full (click)="startVideo2()" color="dark">
+          <ion-icon name="play"></ion-icon>
+          ThaiPBS
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <!-- Workpoint TV -->
+        <button ion-button icon-start round outline full (click)="startVideo3()" color="secondary">
+          <ion-icon name="play"></ion-icon>
+          Workpoint TV
+        </button>
+      </ion-col>
+      <ion-col>
+          <!-- Thairath TV (32) -->
+        <button ion-button icon-start round outline full (click)="startVideo4()" color="danger">
+          <ion-icon name="play"></ion-icon>
+          Thairath TV (32)
+        </button>
+      </ion-col>
+      <!-- <ion-col>
+        3 of 3
+      </ion-col> -->
+    </ion-row>
+    
+  </ion-grid>
+  <button ion-button icon-start round outline full  (click)="startAudio()" color="dark">
+      <ion-icon name="play"></ion-icon>
+      Live Radio - FM 92.5 MHz
+    </button>
+    <button ion-button icon-start round outline full  (click)="stopAudio()" color="dark">
+      <ion-icon name="pause"></ion-icon>
+      <!-- Pause -->
+    </button>
+
+  </ion-content>

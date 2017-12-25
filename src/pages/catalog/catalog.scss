@@ -1,0 +1,46 @@
+page-catalog {
+    .grid-full ion-row {
+        height: 100%;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+      
+      .grid-full ion-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        text-align: center;
+        padding: 0px 0px;
+        // background: gray;
+        border-radius: 0px;
+        box-shadow: 0px 0.5px 1px rgba(128, 128, 128, 0.2);
+        display:block;
+        border: 5px solid rgb(255, 255, 255);
+
+      }
+      
+      .cell-1 {
+        // background-color: #C5DCFC;
+      }
+      .cell-2 {
+        // background-color: #262B69;
+      }
+      .cell-3 {
+        // background-color: #A0C5FA;
+      }
+      .cell-4 {
+        // background-color: #B3D0FC;
+      }
+      .cell-5 {
+        // background-color: #73A7F9;
+      }
+      .cell-6 {
+        // background-color: #8CB9FA;
+      }
+
+      .menuSubTitle {
+        font-size: 0.6em;
+        float:left;
+        display: block;
+        clear: both;
+    }
+}

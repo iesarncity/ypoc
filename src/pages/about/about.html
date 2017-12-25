@@ -1,11 +1,88 @@
+<!--
+  Generated template for the AboutPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
+
+  <ion-navbar color="purple2">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>ติดต่อเรา</ion-title>
   </ion-navbar>
+
 </ion-header>
 
-<ion-content padding>
+
+<ion-content >
+  <br>
+  <div>
+      <img src="http://www.yasothon.go.th/webservice/img/yasothon.png" style="display:block;width:auto;height:7em;margin-left:auto;margin-right:auto;" />
+  </div>
+
+    <ion-item noline>
+        <ion-label style="text-align: center;" color="danger"><h1>สำนักงานจังหวัดยโสธร</h1></ion-label>
+    </ion-item>
+    <ion-item noline><p  style="text-align: center;">กลุ่มงานยุทธศาสตร์และข้อมูลเพื่อการพัฒนาจังหวัด</p></ion-item>
+    
+    <ion-card>
+        
+        <div #map id="map"></div> 
+          <ion-fab right top>
+            <button ion-fab mini outline (click)="launchDialer('0 4571 2722')">
+              <ion-icon  name="call"></ion-icon>
+            </button>
+          </ion-fab>
+        
+          
+
+          <ion-item>
+            <ion-icon name="home" item-start large></ion-icon>
+            <h2>ศาลากลางจังหวัด</h2>
+            <p text-wrap>	ถนนแจ้งสนิท ตำบลในเมือง อำเภอเมืองยโสธร จังหวัดยโสธร 35000</p>
+          </ion-item>
+        
+          <ion-item>
+              <!-- <button ion-button icon-left clear large>
+                  <ion-icon name="call" item-left large></ion-icon>
+                  
+              </button> -->
+
+            <ion-icon name="call" item-left large ></ion-icon>
+            <h3>โทรศัพท์	(+66) 0 4571 2722</h3>
+            <p>โทรสาร	(+66) 0 4571 4212</p>
+            <p>E-mail : yasothonicg@gmail.com</p>
+          </ion-item>
+          <ion-item>
+              <ion-icon name="cloud-done" item-start large></ion-icon>
+              
+              <p text-wrap>	
+              <a class="item" href="#" onclick="window.open('http://www.yasothon.go.th', '_system', 'location=yes'); return false;">
+                http://www.yasothon.go.th</a>
+              </p><p text-wrap>	
+              <a class="item" href="#" onclick="window.open('http://www.yasothonpoc.com', '_system', 'location=yes'); return false;">
+                http://www.yasothonpoc.com</a>
+              </p>
+            </ion-item>
+            <p text-center>	พัฒนาโดย : นายไกรศร เกษงาม</p>
+            <!-- <p text-center>	นักวิชาการคอมพิวเตอร์ปฏิบัติการ</p> -->
+          <ion-item>
+              <button ion-button menuToggle>  <ion-icon name="menu"></ion-icon></button>
+            <!-- <span item-left>18 min</span>
+            <span item-left>(2.6 mi)</span> -->
+            <button ion-button icon-left clear item-end>
+              <ion-icon name="navigate"></ion-icon>
+              Start
+            </button>
+          </ion-item>
+        
+         
+
+        </ion-card>
+
+
+  
 
 </ion-content>

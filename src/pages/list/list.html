@@ -1,0 +1,69 @@
+<ion-header>
+  <ion-navbar color="purple2">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>รายการข่าวทั้งหมด</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="masters">
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content 
+            pullingIcon="arrow-dropdown"
+            pullingText="Pull to refresh"
+            refreshingSpinner="circles"
+            refreshingText="Refreshing...">
+        </ion-refresher-content>
+      </ion-refresher>
+
+    <!-- <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar> -->
+
+      <!-- <ion-list>
+          <ion-item *ngFor="let item of items" (click)="Viewperson(item)">
+              <ion-thumbnail item-start>
+                <img *ngIf="!(item.Pics)" src= "http://123.242.182.88/webservice/images/no_image.jpg" />
+                <img *ngIf="item.Pics" [src]= "'http://www.yasothonpoc.com/upload/thumb/' + item.Pics " />
+              </ion-thumbnail>
+            <div text-wrap class="cut-text-multi"><h3>{{item.Header}}</h3></div>
+            <p><ion-icon name="time"></ion-icon>  {{ item.datetime }} </p>
+          </ion-item>
+        </ion-list> -->
+        <ion-card *ngFor="let item of items" (click)="Viewperson(item)">
+          <ion-card-header>
+              <div class="image-wrapper">
+            <img *ngIf="!(item.Pics)" src= "http://ccwc.org/wp-content/themes/ccwc-theme/images/no-image-available.png" />
+            <img *ngIf="item.Pics" [src]= "'http://www.yasothonpoc.com/upload/thumb/' + item.Pics "  />  
+                </div>
+          </ion-card-header>
+          <!-- <img *ngIf="!(item.Pics)" src= "http://123.242.182.88/webservice/images/no_image.jpg" style="display:block;width:auto;height:12em;margin-left:auto;margin-right:auto;"/>
+          <img *ngIf="item.Pics" [src]= "'http://www.yasothonpoc.com/upload/thumb/' + item.Pics " style="display:block;width:auto;height:12em;margin-left:auto;margin-right:auto;" /> -->
+          <ion-card-content class="margin-top">
+            
+              <h3 color="danger"><strong> {{item.Header}} </strong></h3>
+           
+            <!-- <p><ion-icon name="time"></ion-icon>  {{ item.datetime }}</p> -->
+          
+          <ion-list >
+              <ion-item class="movie-info">
+                  <!-- <ion-avatar item-start>
+                      <img src="http://www.yasothon.go.th/web/Yaso_files/images/yasothon.jpg">
+                    </ion-avatar> -->
+                  <p color="danger"> <ion-icon name="person"></ion-icon>   ข่าว : {{ item.subOfficeName }} </p>
+                  <p color="danger"> <ion-icon name="time"></ion-icon>   {{ item.datetime }} </p>
+                  <ion-icon name="md-more" item-end></ion-icon>
+                </ion-item>
+        
+          </ion-list>
+        </ion-card-content>
+        </ion-card>
+
+
+        <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="page < totalPage">
+            <ion-infinite-scroll-content 
+            loadingSpinner="bubbles" 
+            loadingText="Loading more data...">
+          </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
+
+</ion-content>

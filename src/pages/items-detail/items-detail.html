@@ -1,0 +1,38 @@
+<!--
+  Generated template for the ItemsDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="purple2">
+    <ion-title>{{person.Header}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="masters" >
+    <ion-card>
+        <img *ngIf="!(person.Pics)" src= "http://www.yasothonpoc.com/webservice/img/img.jpg" class="hover01"/>
+        <img *ngIf="person.Pics" [src]= "'http://www.yasothonpoc.com/upload/thumb/' + person.Pics " class="hover01"/>
+        <ion-card-content>
+          <ion-card-title>
+           <h2 text-wrap> <strong>   {{person.Header}} </strong> </h2>
+          </ion-card-title>
+          <ion-list>
+          <ion-item>
+            <p><strong color="danger">โดย</strong> : {{ person.subOfficeName }}</p>
+            <p><ion-icon name="time"></ion-icon>  {{person.datetime}} </p>            
+          </ion-item>
+          </ion-list>
+          <hr>
+              <div text-wrap [innerHTML]="person.Detail" ></div>    
+        </ion-card-content>
+      </ion-card>
+
+      <button ion-button icon-only (click)="facebookShare()" color="primary" clear end>
+          <ion-icon  class="share-icon" name="logo-facebook"></ion-icon>
+        </button>
+</ion-content>
